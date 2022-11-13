@@ -10,7 +10,15 @@ import service.StudentServiceImpl;
 public class StudentPresentationImpl implements StudentPresentation {
 	
 	//Presentation will pass the request to service for processing and gives response to client
-	private StudentService studentService = new StudentServiceImpl();
+//	private StudentService studentService = new StudentServiceImpl();
+	
+	private StudentService studentService;
+	
+	//creating setter which we will use in configuration
+	
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
 
 	@Override
 	public void showMenu() {
@@ -20,6 +28,7 @@ public class StudentPresentationImpl implements StudentPresentation {
 		System.out.println("2.Add New Student");
 		System.out.println("3.Exit");
 	}
+
 
 	@Override
 	public void performMenu(int choice) {

@@ -9,7 +9,15 @@ import persistence.StudentDaoImpl;
 public class StudentServiceImpl implements StudentService{
 	
 	//Service will request persistence layer for all data needs
-	private StudentDao studentDao = new StudentDaoImpl();
+//	private StudentDao studentDao = new StudentDaoImpl();
+	
+	private StudentDao studentDao;
+	
+	//constructor for configuration
+	public StudentServiceImpl(StudentDao studentDao) {
+		super();
+		this.studentDao = studentDao;
+	}
 
 	@Override
 	public Collection<Student> getAllStudents() {
